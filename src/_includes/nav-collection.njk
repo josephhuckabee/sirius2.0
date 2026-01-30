@@ -1,0 +1,16 @@
+<nav class="site-nav">
+  <div class="logo">
+    <a href="/"><img src="/images/Transparent_Logo.png" alt="Sirius logo"></a>
+  </div>
+
+
+
+  <div class="links" role="list">
+    {%- for navItem in collections.navItem %}
+    <a {% if navItem.url === page.url %}aria-current="page"{% endif %} 
+        href="{{ navItem.url }}">
+          {{ navItem.data.title }}
+    </a>
+    {%- endfor %}
+  </div>
+</nav>

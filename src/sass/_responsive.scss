@@ -1,0 +1,45 @@
+/* ======================================================
+   Responsive Styling
+   =======================================================  */
+
+@media screen and (max-width: 900px) {
+  main {
+    padding: 2rem 1.25rem 3rem;
+  }
+
+  .hero {
+    padding: 3rem 2rem;
+  }
+
+  .hero--image {
+    grid-template-columns: 1fr;
+  }
+
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+
+  .site-nav .links {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .grid1,
+  .grid2,
+  .grid3 {
+    gap: 1.25rem;
+  }
+
+  .site-nav {
+    padding: 1rem;
+  }
+}
