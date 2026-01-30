@@ -149,4 +149,21 @@
   .nav-dropdown {
     display: block;
   }
+
+  .nav-dropdown[open]::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 10, 20, 0.55);
+    backdrop-filter: blur(18px);
+    z-index: 15;
+    pointer-events: none;
+  }
+
+  .nav-dropdown[open] .nav-dropdown__panel {
+    position: fixed;
+    left: 50%;
+    top: 4.5rem;
+    transform: translateX(-50%);
+  }
 }
