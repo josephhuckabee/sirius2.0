@@ -6,11 +6,25 @@
 
 
   <div class="links" role="list">
-    {%- for navItem in collections.navItem %}
-    <a {% if navItem.url === page.url %}aria-current="page"{% endif %} 
+    {%- for navItem in collections.navOrdered %}
+    <a {% if navItem.url === page.url %}aria-current="page"{% endif %}
         href="{{ navItem.url }}">
           {{ navItem.data.title }}
     </a>
     {%- endfor %}
   </div>
+
+  <details class="nav-dropdown">
+    <summary aria-label="Open menu">
+      <span class="hamburger" aria-hidden="true"></span>
+    </summary>
+    <div class="nav-dropdown__panel" role="list">
+      {%- for navItem in collections.navOrdered %}
+      <a {% if navItem.url === page.url %}aria-current="page"{% endif %}
+          href="{{ navItem.url }}">
+            {{ navItem.data.title }}
+      </a>
+      {%- endfor %}
+    </div>
+  </details>
 </nav>

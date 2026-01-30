@@ -45,8 +45,50 @@ main {
   padding: 2.5rem 1.5rem 4rem;
 }
 
+main.home {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 section {
   margin: 3rem 0;
+}
+
+.home {
+  position: relative;
+  min-height: calc(100vh - 120px);
+  padding: 4rem clamp(1.5rem, 4vw, 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  inset: -6rem 0 0;
+  background-image: url("/images/cosmos-gb472637dd_1920.jpg");
+  background-size: cover;
+  background-position: center 20%;
+  background-attachment: fixed;
+  opacity: 0.55;
+  z-index: 0;
+  animation: home-parallax 36s ease-in-out infinite alternate;
+}
+
+.home > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes home-parallax {
+  0% {
+    background-position: center 20%;
+  }
+  100% {
+    background-position: center 0%;
+  }
 }
 
 .site-header {
@@ -65,9 +107,20 @@ section {
   background: linear-gradient(135deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.6));
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
   overflow: hidden;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.hero::after {
+.hero--glass {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.55), rgba(30, 41, 59, 0.35));
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.hero:not(.hero--glass)::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -154,6 +207,10 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.astronomers .astrogrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .astros,
 .object,
 .location,
@@ -210,14 +267,39 @@ section {
 
 .scientists {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: rgba(15, 23, 42, 0.6);
   border-radius: 16px;
   margin-bottom: 1rem;
 }
 
 .history .grid-wrapper {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.news-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.news-controls label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.news-controls select {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
 }
 
 footer {

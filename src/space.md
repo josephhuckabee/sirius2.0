@@ -3,6 +3,7 @@ title: What is Space?
 layout: base.njk
 tags: navItem
 pageClass: space
+navOrder: 2
 ---
 <section class="grid1">
   <div class="layer">

@@ -3,6 +3,7 @@ title: Milkyway
 layout: base.njk
 tags: navItem
 pageClass: milkyway
+navOrder: 3
 ---
 <section class="hero hero--compact">
   <div class="hero__content">

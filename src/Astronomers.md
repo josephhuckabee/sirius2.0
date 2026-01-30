@@ -3,6 +3,7 @@ title: Astronomers
 layout: base.njk
 tags: navItem
 pageClass: astronomers
+navOrder: 4
 ---
 <section class="bio">
   <h2>The people behind the science</h2>

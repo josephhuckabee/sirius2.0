@@ -3,9 +3,10 @@ title: Home
 layout: base.njk
 tags: navItem
 pageClass: home
+navOrder: 1
 ---
 
-<section class="hero">
+<section class="hero hero--glass">
   <div class="hero__content">
     <p class="eyebrow">Sirius</p>
     <h1>Look up, think bigger</h1>
@@ -13,5 +14,3 @@ pageClass: home
     <a class="hero__link" href="https://spacequotations.com/quotes-about-astronomy/">Socrates, philosopher</a>
   </div>
 </section>
-
-

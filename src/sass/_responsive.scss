@@ -7,6 +7,11 @@
     padding: 2rem 1.25rem 3rem;
   }
 
+  main.home {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .hero {
     padding: 3rem 2rem;
   }
@@ -19,8 +24,17 @@
     grid-template-columns: 1fr;
   }
 
+
   .site-nav .links {
     justify-content: center;
+  }
+
+  .home::before {
+    background-attachment: scroll;
+  }
+
+  .home {
+    padding: 0 1.25rem;
   }
 }
 
@@ -41,5 +55,13 @@
 
   .site-nav {
     padding: 1rem;
+  }
+
+  .astronomers .astrogrid {
+    grid-template-columns: 1fr;
+  }
+
+  .home {
+    padding: 0 1rem;
   }
 }

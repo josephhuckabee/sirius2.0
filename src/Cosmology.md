@@ -3,6 +3,7 @@ title: Cellestial Bodies
 layout: base.njk
 tags: navItem
 pageClass: space-objects
+navOrder: 6
 ---
 <section class="bio">
   <h2>What is a cellestial body?</h2>
