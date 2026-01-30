@@ -1,13 +1,13 @@
 ---
-title: Cellestial Bodies
+title: Celestial Bodies
 layout: base.njk
 tags: navItem
 pageClass: space-objects
 navOrder: 6
 ---
 <section class="bio">
-  <h2>What is a cellestial body?</h2>
-  <p>Any collection of matter in space is considered a cellestial body. Here are the main cellstial bodies that scientist know about.</p>
+<h2>What is a celestial body?</h2>
+  <p>Any collection of matter in space is considered a celestial body. Here are the main celestial bodies that scientists know about.</p>
 </section>
 
 <section class="grid3">

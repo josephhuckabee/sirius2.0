@@ -5,6 +5,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget("./src/css/");
     eleventyConfig.addPassthroughCopy("./src/images/");
     eleventyConfig.addPassthroughCopy("./src/js/");
+    eleventyConfig.addPassthroughCopy("./src/space-news-fallback.json");
     eleventyConfig.addCollection("navOrdered", function(collectionApi) {
       return collectionApi.getFilteredByTag("navItem").sort((a, b) => {
         const aOrder = typeof a.data.navOrder === "number" ? a.data.navOrder : 999;

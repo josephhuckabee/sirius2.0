@@ -88,6 +88,13 @@ const fetchViaProxy = async () => {
   return results.flat();
 };
 
+const fetchFallback = async () => {
+  const response = await fetch('/space-news-fallback.json');
+  if (!response.ok) throw new Error('Fallback unavailable');
+  const data = await response.json();
+  return data.items || [];
+};
+
 const loadNews = async () => {
   try {
     currentItems = await fetchViaNetlify();
@@ -95,7 +102,11 @@ const loadNews = async () => {
     try {
       currentItems = await fetchViaProxy();
     } catch (proxyError) {
-      currentItems = [];
+      try {
+        currentItems = await fetchFallback();
+      } catch (fallbackError) {
+        currentItems = [];
+      }
     }
   }
 
